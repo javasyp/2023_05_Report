@@ -19,10 +19,7 @@ public class NeedLoginInterceptor implements HandlerInterceptor {
 		
 		// 로그아웃 상태일 때
 		if (!rq.isLogined()) {
-			// write 클릭 시 로그인 폼으로 가는데 로그인 후 어디로 가지? (Uri 저장)
-			String actorLoginUri = rq.getEncodedCurrentUri();
-			
-			rq.printReplace("로그인 후 이용해 주세요.", "../member/login?afterLoginUri=" + actorLoginUri);
+			rq.printReplace("로그인 후 이용해 주세요.", "../member/login");
 			return false;
 		}
 		
