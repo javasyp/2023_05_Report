@@ -40,19 +40,38 @@
 							<span>HOME</span>
 					</a>
 				</li>
+				<c:if test="${!rq.isLogined() }">
+					<li class="hover:underline">
+						<a class="h-full px-3 flex items-center" href="../member/login">
+							<span>LOGIN</span>
+						</a>
+					</li>
+					<li class="hover:underline">
+						<a class="h-full px-3 flex items-center" href="../member/join">
+							<span>JOIN</span>
+						</a>
+					</li>
+				</c:if>
+				<c:if test="${rq.isLogined() }">
+					<li class="hover:underline">
+						<a class="h-full px-3 flex items-center" href="../member/profile">
+							<span>MY PROFILE</span>
+						</a>
+					</li>
+					<li class="hover:underline">
+						<a class="h-full px-3 flex items-center" href="../member/doLogout">
+							<span>LOGOUT</span>
+						</a>
+					</li>
+				</c:if>
 				<li class="hover:underline">
-					<a class="h-full px-3 flex items-center" href="../member/login">
-						<span>LOGIN</span>
+					<a class="h-full px-3 flex items-center" href="../article/list">
+						<span>BOARD</span>
 					</a>
 				</li>
 				<li class="hover:underline">
-					<a class="h-full px-3 flex items-center" href="../member/doLogout">
-						<span>LOGOUT</span>
-					</a>
-				</li>
-				<li class="hover:underline">
-					<a class="h-full px-3 flex items-center" href="../member/join">
-						<span>JOIN</span>
+					<a class="h-full px-3 flex items-center" href="../article/write">
+						<span>WRITE</span>
 					</a>
 				</li>
 			</ul>
